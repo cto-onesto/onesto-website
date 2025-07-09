@@ -132,19 +132,7 @@ export function Header() {
       {isMenuOpen && (
         <div className="lg:hidden border-t bg-white">
           <div className="container px-4 py-4 space-y-4">
-            <Link href="/for-you" className="block py-2 text-sm font-medium hover:text-primary">
-              For You
-            </Link>
-            <Link href="/for-companies" className="block py-2 text-sm font-medium hover:text-primary">
-              For Companies
-            </Link>
-            <Link href="/for-charities" className="block py-2 text-sm font-medium hover:text-primary">
-              For Charities
-            </Link>
-            <Link href="/benefits" className="block py-2 text-sm font-medium hover:text-primary">
-              Benefits
-            </Link>
-            <Link href="/product" className="block py-2 text-sm font-medium hover:text-primary">
+            <Link href="/" className="block py-2 text-sm font-medium hover:text-primary">
               Product
             </Link>
             <Link href="/blog" className="block py-2 text-sm font-medium hover:text-primary">

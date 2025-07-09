@@ -356,15 +356,13 @@ export function AudienceToggle() {
                           <img
                             src={
                               activeAudience === "companies"
-                                ? "/shop-to-save-hero.png"
+                                ? "/onesto-ewa.webp"
                                 : activeAudience === "individuals"
-                                  ? "/shop-to-save-hero.png"
-                                  : "/shop-to-save-hero.png"
+                                  ? "/shop-onesto.webp"
+                                  : "/donations-view.webp"
                             }
                             alt={`${content.title} preview`}
-                            width={1200}
-                            height={750}
-                            className="rounded-2xl shadow-2xl"
+                            className="h-auto w-half rounded-2xl shadow-2xl fade-corners"
                           />
                           {/* <img
                         src="/shop-to-save-hero.png"
