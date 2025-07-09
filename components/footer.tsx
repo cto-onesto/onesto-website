@@ -20,8 +20,8 @@ export function Footer() {
                   }}
                 >
                   <img
-                    src="logo.png"
-                    alt="Onesto Logo"
+                    src="/logo.png"
+                    alt="Onesto"
                     className="h-8 w-auto rounded-full"
                   />
                 </motion.div>

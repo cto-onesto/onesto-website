@@ -44,7 +44,7 @@ export function EnhancedHeader() {
               }}
             >
               <img
-                src="logo.png"
+                src="/logo.png"
                 alt="Onesto"
                 className="h-8 w-auto rounded-full"
               />
