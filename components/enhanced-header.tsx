@@ -133,18 +133,29 @@ export function EnhancedHeader() {
                 </motion.div>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            {["Blog", "About Us", "See How It Works"].map((item, index) => (
+            {["Blog", "About Us", "Integrations", "See How It Works"].map((item, index) => (
               <NavigationMenuItem key={item}>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    href={`/${item.toLowerCase().replace(/\s+/g, "-").replace("see-", "")}`}
-                    legacyBehavior
-                    passHref
-                  >
-                    <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none">
+                  {item === "See How It Works" ? (
+                    <a
+                      href="https://meetings.hubspot.com/doberoi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none"
+                    >
                       {item}
-                    </NavigationMenuLink>
-                  </Link>
+                    </a>
+                  ) : (
+                    <Link
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-").replace("see-", "")}`}
+                      legacyBehavior
+                      passHref
+                    >
+                      <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none">
+                        {item}
+                      </NavigationMenuLink>
+                    </Link>
+                  )}
                 </motion.div>
               </NavigationMenuItem>
             ))}
@@ -212,7 +223,8 @@ export function EnhancedHeader() {
                 { name: "Product", href: "/#product" },
                 { name: "Blog", href: "/blog" },
                 { name: "About Us", href: "/about" },
-                { name: "See How It Works", href: "/how-it-works" },
+                { name: "Integrations", href: "/integrations" },
+                { name: "See How It Works", href: "https://meetings.hubspot.com/doberoi", external: true },
               ].map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -220,13 +232,25 @@ export function EnhancedHeader() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Link
-                    href={item.href}
-                    className="block py-3 px-4 text-sm font-medium hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-3 px-4 text-sm font-medium hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block py-3 px-4 text-sm font-medium hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               <motion.div

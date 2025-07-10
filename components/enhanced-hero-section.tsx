@@ -129,112 +129,117 @@ export function EnhancedHeroSection() {
                   size="lg"
                   className="glass-accent border-accent/30 text-accent hover:bg-accent/10 rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-sm"
                 >
-                  <Link href="/how-it-works">
+                  <a
+                    href="https://meetings.hubspot.com/doberoi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                  >
                     <Play className="mr-2 h-5 w-5" />
                     See How It Works
-                  </Link>
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-            >
-              <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
-                <Link href="https://play.google.com/store/apps/details?id=com.onesto&pli=1" className="inline-block rounded-2xl p-2 hover-lift">
-                  <Image
-                    src="gplay.png"
-                    alt="Download on Google Play Store"
-                    width={180}
-                    height={60}
-                    className="h-12 w-auto"
-                  />
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
-                <Link href="https://apps.apple.com/au/app/onesto/id1582583482" className="inline-block rounded-2xl p-2 hover-lift">
-                  <Image
-                    src="appstore.png"
-                    alt="Download on App Store"
-                    width={180}
-                    height={60}
-                    className="h-12 w-auto"
-                  />
-                </Link>
-              </motion.div>
+                  </a>
+              </Button>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 pt-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
           >
-            <div className="relative">
-              {/* Glowing background effects */}
-              <motion.div
-                className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full blur-3xl"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-              />
-
-              <motion.div
-                className="absolute -inset-4 bg-accent/30 rounded-full blur-2xl"
-                animate={{
-                  scale: [1.1, 1, 1.1],
-                  opacity: [0.2, 0.4, 0.2],
-                }}
-                transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-              />
-
-              <Image
-                src="hero.png"
-                alt="Onesto platform dashboard showing employee benefits and philanthropic programs interface with real-time analytics and engagement metrics"
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-2xl"
-                priority
-              />
-
-              {/* Floating UI elements */}
-              <motion.div
-                className="absolute -top-8 -right-8 sm:-top-4 sm:-right-4 z-20 glass-primary rounded-2xl p-4 shadow-lg"
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0],
-                }}
-                transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-primary">Automated Rewards</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-8 -left-8 sm:-bottom-4 sm:-left-4 z-20 glass-accent rounded-2xl p-4 shadow-lg"
-                animate={{
-                  y: [0, 10, 0],
-                  rotate: [0, -5, 0],
-                }}
-                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-accent">Improved Retention</span>
-                </div>
-              </motion.div>
-            </div>
+            <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link href="https://play.google.com/store/apps/details?id=com.onesto&pli=1" className="inline-block rounded-2xl p-2 hover-lift">
+                <Image
+                  src="gplay.png"
+                  alt="Download on Google Play Store"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link href="https://apps.apple.com/au/app/onesto/id1582583482" className="inline-block rounded-2xl p-2 hover-lift">
+                <Image
+                  src="appstore.png"
+                  alt="Download on App Store"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="relative">
+            {/* Glowing background effects */}
+            <motion.div
+              className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+            />
+
+            <motion.div
+              className="absolute -inset-4 bg-accent/30 rounded-full blur-2xl"
+              animate={{
+                scale: [1.1, 1, 1.1],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+            />
+
+            <Image
+              src="hero.png"
+              alt="Onesto platform dashboard showing employee benefits and philanthropic programs interface with real-time analytics and engagement metrics"
+              width={600}
+              height={400}
+              className="w-full h-auto rounded-2xl"
+              priority
+            />
+
+            {/* Floating UI elements */}
+            <motion.div
+              className="absolute -top-8 -right-8 sm:-top-4 sm:-right-4 z-20 glass-primary rounded-2xl p-4 shadow-lg"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [0, 5, 0],
+              }}
+              transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-primary">Automated Rewards</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="absolute -bottom-8 -left-8 sm:-bottom-4 sm:-left-4 z-20 glass-accent rounded-2xl p-4 shadow-lg"
+              animate={{
+                y: [0, 10, 0],
+                rotate: [0, -5, 0],
+              }}
+              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-accent">Improved Retention</span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
-    </section>
+    </div>
+    </section >
   )
 }

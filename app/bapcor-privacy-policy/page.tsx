@@ -1,5 +1,14 @@
-import Redirect from "@/components/redirect"
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Page() {
-  return <Redirect to="/privacy-policy/" />
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push("/privacy-policy/")
+  }, [router])
+
+  return <div>Redirecting...</div>
 }

@@ -44,21 +44,11 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">hello@onesto.co</p>
+                      <p className="text-gray-600">aussupport@onesto.co</p>
                       <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
-                      <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
-                    </div>
-                  </div>
 
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -67,11 +57,11 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-gray-900">Office</h3>
                       <p className="text-gray-600">
-                        123 Business District
+                        60 Toorak Rd
                         <br />
-                        Suite 100
+                        Suite 1
                         <br />
-                        New York, NY 10001
+                        South Yarra VIC 3141
                       </p>
                     </div>
                   </div>

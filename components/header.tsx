@@ -107,11 +107,14 @@ export function Header() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/how-it-works" legacyBehavior passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  See How It Works
-                </NavigationMenuLink>
-              </Link>
+              <a
+                href="https://meetings.hubspot.com/doberoi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+              >
+                See How It Works
+              </a>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -141,9 +144,14 @@ export function Header() {
             <Link href="/about" className="block py-2 text-sm font-medium hover:text-primary">
               About Us
             </Link>
-            <Link href="/how-it-works" className="block py-2 text-sm font-medium hover:text-primary">
+            <a
+              href="https://meetings.hubspot.com/doberoi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 text-sm font-medium hover:text-primary"
+            >
               See How It Works
-            </Link>
+            </a>
             <Button asChild className="w-full">
               <Link href="/contact">Contact</Link>
             </Button>

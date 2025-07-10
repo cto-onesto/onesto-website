@@ -115,6 +115,11 @@ export function Footer() {
                   Report a Bug
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Integrations Section */}

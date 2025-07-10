@@ -35,10 +35,14 @@ export function HeroSection() {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-white border-accent"
               >
-                <Link href="/how-it-works">
+                <a
+                  href="https://meetings.hubspot.com/doberoi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Play className="mr-2 h-4 w-4" />
                   See How It Works
-                </Link>
+                </a>
               </Button>
             </div>
 
