@@ -106,7 +106,7 @@ export default function ShopAndSavePage() {
             </div>
             <div className="mt-12 lg:mt-0 flex justify-center">
               <img
-                src="cta-app.png"
+                src="/cta-app.png"
                 alt="Wages Hero Image"
                 className="w-full pb-2 max-w-sm h-auto rounded-lg object-cover"
               />

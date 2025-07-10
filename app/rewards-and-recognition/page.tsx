@@ -106,7 +106,7 @@ export default function ShopAndSavePage() {
             </div>
             <div className="relative mt-12 lg:mt-0 flex justify-center">
               <img
-                src="Girl-holding-phone-in-apron.png"
+                src="/Girl-holding-phone-in-apron.png"
                 alt="Rewards Hero Image"
                 className="h-full pb-2 w-auto rounded-lg object-cover"
               />
@@ -129,7 +129,7 @@ export default function ShopAndSavePage() {
 
             <div className="pt-6 lg:mt-0">
               <img
-                src="award-flow.png"
+                src="/award-flow.png"
                 alt="Rewards Creation Flow"
                 className="w-full h-auto rounded-lg object-cover"
               />

@@ -58,9 +58,9 @@ export default function ShopAndSavePage() {
 
             <div className="mt-12 lg:mt-0 flex justify-center">
               <img
-                src="shop-to-save-hero.png"
+                src="/shop-to-save-hero.png"
                 alt="Shop and Save"
-                className="w-full max-w-sm h-auto rounded-lg object-cover"
+                className="h-auto max-w-sm h-auto rounded-lg object-cover"
               />
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function ShopAndSavePage() {
           </div>
           <div className="pt-6 lg:mt-0">
             <img
-              src="ret-list.png"
+              src="/ret-list.png"
               alt="List of Retailers"
               className="w-full h-auto rounded-lg object-cover shadow-lg"
             />

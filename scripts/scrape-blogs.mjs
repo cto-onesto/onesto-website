@@ -6,21 +6,21 @@ import { resolve } from 'path';
 const BASE_URL = 'https://www2.onesto.co/blog/';
 
 async function getBlogUrls() {
-    try {
-        const { data } = await axios.get(BASE_URL);
-        const $ = cheerio.load(data);
-        const blogUrls = new Set();
-        $('a').each((i, element) => {
-            const href = $(element).attr('href');
-            if (href && href.startsWith(BASE_URL) && href !== BASE_URL) {
-                blogUrls.add(href);
-            }
-        });
-        return Array.from(blogUrls);
-    } catch (error) {
-        console.error('Error fetching blog URLs:', error);
-        return [];
-    }
+    return [
+        'https://www2.onesto.co/the-age-half-of-australians-on-financial-brink-as-living-costs-bite/',
+        'https://www2.onesto.co/herald-sun-victorians-in-grop-of-bill-shock-as-the-average-unpaid-power-bill-debt-spikes-to-2500/',
+        'https://www2.onesto.co/hhr-how-to-calculate-your-employee-turnover-costs/',
+        'https://www2.onesto.co/fast-company-2023-honorable-mention/',
+        'https://www2.onesto.co/hrd-exclusive-feature-boosting-employee-retention-through-financial-wellbeing/',
+        'https://www2.onesto.co/managing-organising-above/',
+        'https://www2.onesto.co/the-great-resignation/',
+        'https://www2.onesto.co/employers-seeking-creative-ways/',
+        'https://www2.onesto.co/how-to-spend-less-and-save-money/',
+        'https://www2.onesto.co/xero-me/',
+        'https://www2.onesto.co/xero-app-marketplace/',
+        'https://www2.onesto.co/the-importance-of-financial-wellness/',
+        'https://www2.onesto.co/managing-employee-retention/',
+    ];
 }
 
 async function scrapeBlogPost(url) {

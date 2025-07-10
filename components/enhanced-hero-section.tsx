@@ -200,7 +200,7 @@ export function EnhancedHeroSection() {
             />
 
             <Image
-              src="hero.png"
+              src="/hero.png"
               alt="Onesto platform dashboard showing employee benefits and philanthropic programs interface with real-time analytics and engagement metrics"
               width={600}
               height={400}

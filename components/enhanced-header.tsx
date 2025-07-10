@@ -28,7 +28,7 @@ export function EnhancedHeader() {
 
   return (
     <motion.header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 bg-gradient-to-t from-white/80 via-white/0 to-transparent bg-[length:100%_200%] bg-bottom ${isScrolled ? "glass-card backdrop-blur-xl border-b border-white/20 shadow-lg" : "bg-transparent"
+      className={`fixed top-0 z-50 w-full transition-all duration-300 bg-white ${isScrolled ? "glass-card backdrop-blur-xl border-b border-white/20 shadow-lg" : ""
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -67,7 +67,7 @@ export function EnhancedHeader() {
                   transition={{ duration: 0.2 }}
                 >
                   <div className="grid gap-2 p-6 md:w-[600px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                    <div className="row-span-3">
+                    {/* <div className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
                           className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-b from-primary/10 to-primary/20 p-6 no-underline outline-none focus:shadow-md hover:shadow-lg transition-shadow duration-200"
@@ -92,7 +92,7 @@ export function EnhancedHeader() {
                           </p>
                         </Link>
                       </NavigationMenuLink>
-                    </div>
+                    </div> */}
                     <Link
                       href="/shop-and-save"
                       className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-accent focus:bg-accent/10 focus:text-accent"

@@ -83,6 +83,7 @@ export default function RootLayout({
         <EnhancedHeader />
         <main>{children}</main>
         <Footer />
+        <script type="text/javascript" id="hs-scriptloader" async defer src="//js.hs-scripts.com/6439070.js"></script>
       </body>
     </html>
   )

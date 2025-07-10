@@ -58,7 +58,7 @@ export default function ShopAndSavePage() {
 
             <div className="mt-12 lg:mt-0 flex justify-center">
               <img
-                src="lms-hero.png"
+                src="/lms-hero.png"
                 alt="Learn Platform Hero Image"
                 className="w-auto h-auto max-w-sm rounded-lg object-cover"
               />

@@ -89,6 +89,11 @@ export function Footer() {
                   Security
                 </Link>
               </li>
+              <li>
+                <Link href="/research" className="text-muted-foreground hover:text-foreground">
+                  Research
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Company Section */}
@@ -113,11 +118,6 @@ export function Footer() {
               <li>
                 <Link href="/report-bugs" className="text-muted-foreground hover:text-foreground">
                   Report a Bug
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground">
-                  Privacy Policy
                 </Link>
               </li>
             </ul>
