@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import blogPosts from '@/lib/blog-posts.json';
 
 export default function BlogPage() {
-  console.log("POST", blogPosts[0])
   return (
     <section className="container py-12 sm:py-20">
       <div className="flex flex-col min-h-screen">

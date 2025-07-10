@@ -1,6 +1,8 @@
+'use client';
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MotionDiv, MotionH1, MotionH2, MotionP } from "@/components/motion";
+import { motion } from "@/components/motion";
 
 export default function ResearchPage() {
   const containerVariants = {
@@ -19,50 +21,50 @@ export default function ResearchPage() {
   };
 
   return (
-    <MotionDiv
+    <motion.div
       className="min-h-screen bg-white py-12 pt-24"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <MotionH1
+        <motion.h1
           className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12"
           variants={itemVariants}
         >
           The Research Behind Onesto
-        </MotionH1>
+        </motion.h1>
 
-        <MotionDiv className="max-w-4xl mx-auto mb-16" variants={containerVariants}>
-          <MotionDiv className="aspect-video w-full mb-8" variants={videoVariants}>
+        <motion.div className="max-w-4xl mx-auto mb-16" variants={containerVariants}>
+          <motion.div className="aspect-video w-full mb-8" variants={videoVariants}>
             <iframe
               className="w-full h-full rounded-xl shadow-lg"
-              src="https://www.youtube.com/embed/klnkxn2rsPM"
+              src="https://www.youtube.com/embed/klnkxn2rsPM?si=oJz8Fq9QmZahbYAV"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </motion.div>
-          <MotionP className="text-lg text-gray-700 leading-relaxed mb-6" variants={itemVariants}>
+          <motion.p className="text-lg text-gray-700 leading-relaxed mb-6" variants={itemVariants}>
             Onesto is built upon a foundation of rigorous academic research, ensuring that our solutions are not only innovative but also deeply rooted in scientific understanding of human behavior and financial well-being. We are proud to collaborate with leading experts in the field, particularly Professors from Columbia Business School, US, whose insights have been instrumental in shaping the core principles and features of our product.
-          </MotionP>
-          <MotionP className="text-lg text-gray-700 leading-relaxed" variants={itemVariants}>
+          </motion.p>
+          <motion.p className="text-lg text-gray-700 leading-relaxed" variants={itemVariants}>
             Their extensive research into behavioral economics, employee motivation, and financial psychology has guided the development of Onesto, allowing us to create a platform that genuinely addresses the needs of both employees and employers. This partnership ensures that Onesto remains at the forefront of financial wellness and employee engagement, delivering impactful and evidence-based results.
-          </MotionP>
+          </motion.p>
         </motion.div>
 
-        <MotionDiv className="max-w-4xl mx-auto mb-16" variants={containerVariants}>
-          <MotionH2
+        <motion.div className="max-w-4xl mx-auto mb-16" variants={containerVariants}>
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"
             variants={itemVariants}
           >
             The Product
-          </MotionH2>
-          <MotionDiv className="aspect-video w-full" variants={videoVariants}>
+          </motion.h2>
+          <motion.div className="aspect-video w-full" variants={videoVariants}>
             <iframe
               className="w-full h-full rounded-xl shadow-lg"
-              src="https://www.youtube.com/embed/klnkxn2rsPM"
+              src="https://www.youtube.com/embed/i_CVfxme9iU?si=wk9XaBOar0i6Pb6A"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -77,19 +79,19 @@ export default function ResearchPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
-          <MotionH2
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             variants={itemVariants}
           >
             Ready to Transform Your Workplace?
-          </MotionH2>
-          <MotionP
+          </motion.h2>
+          <motion.p
             className="text-lg text-gray-700 max-w-2xl mx-auto mb-8"
             variants={itemVariants}
           >
             Discover how Onesto's research-backed solutions can empower your employees and drive your organization's success. Connect with our team to explore a partnership that truly makes a difference.
-          </MotionP>
-          <MotionDiv variants={itemVariants}>
+          </motion.p>
+          <motion.div variants={itemVariants}>
             <Button asChild className="bg-primary hover:bg-primary/90 glow-primary rounded-xl px-8 py-3 text-lg font-semibold">
               <Link href="/contact">Contact Us to Learn More</Link>
             </Button>
