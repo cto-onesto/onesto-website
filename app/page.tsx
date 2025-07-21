@@ -37,7 +37,7 @@ export default function HomePage() {
       <EnhancedHeroSection />
       <AudienceToggle />
 
-      <section className="py-24 lg:py-40">
+      <section className="py-32 lg:py-48">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="space-y-6">
@@ -68,7 +68,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-40 bg-gray-50">
+      <section className="py-32 lg:py-48 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="aspect-video">
@@ -98,7 +98,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32">
+      <section className="py-32 lg:py-48">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="space-y-6">
@@ -128,7 +128,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 bg-gray-50">
+      <section className="py-32 lg:py-48 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="aspect-video">
@@ -158,9 +158,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <XeroSection />
-      <TestimonialsSection />
-      <CTASection />
+      <div className="py-24 space-y-24">
+        <XeroSection />
+        <TestimonialsSection />
+        <CTASection />
+      </div>
     </>
   )
 }

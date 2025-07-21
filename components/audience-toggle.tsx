@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -132,6 +133,22 @@ const contentMap = {
 export function AudienceToggle() {
   const [activeAudience, setActiveAudience] = useState<Audience>("companies")
   const content = contentMap[activeAudience]
+  const router = useRouter()
+  const pathname = usePathname()
+
+  useEffect(() => {
+    if (pathname === "/for-companies") {
+      setActiveAudience("companies")
+    } else if (pathname === "/for-members") {
+      setActiveAudience("individuals")
+    } else if (pathname === "/for-charities") {
+      setActiveAudience("charities")
+    }
+  }, [pathname])
+
+  const handleAudienceChange = (audience: Audience) => {
+    setActiveAudience(audience)
+  }
 
   return (
     <section id="product" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
@@ -154,21 +171,21 @@ export function AudienceToggle() {
             <div className="flex relative">
 
               <button
-                onClick={() => setActiveAudience("companies")}
+                onClick={() => handleAudienceChange("companies")}
                 className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "companies" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
                   }`}
               >
                 For Companies
               </button>
               <button
-                onClick={() => setActiveAudience("individuals")}
+                onClick={() => handleAudienceChange("individuals")}
                 className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "individuals" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
                   }`}
               >
                 For You
               </button>
               <button
-                onClick={() => setActiveAudience("charities")}
+                onClick={() => handleAudienceChange("charities")}
                 className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "charities" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
                   }`}
               >
@@ -327,6 +344,21 @@ export function AudienceToggle() {
                         ? "bg-accent hover:bg-accent/90 glow-accent"
                         : "bg-green-500 hover:bg-green-500/90 glow-green"
                       } text-white rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl`}
+                    onClick={() => {
+                      switch (activeAudience) {
+                        case "companies":
+                          router.push("/for-companies")
+                          break
+                        case "individuals":
+                          router.push("/for-members")
+                          break
+                        case "charities":
+                          router.push("/for-charities")
+                          break
+                        default:
+                          break
+                      }
+                    }}
                   >
                     {content.cta}
                     <ArrowRight className="ml-2 h-5 w-5" />
