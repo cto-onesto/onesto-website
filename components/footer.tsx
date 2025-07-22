@@ -116,6 +116,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/faqs" className="text-muted-foreground hover:text-foreground">
+                  FAQs
+                </Link>
+              </li>
+              <li>
                 <Link href="/report-bugs" className="text-muted-foreground hover:text-foreground">
                   Report a Bug
                 </Link>
