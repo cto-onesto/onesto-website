@@ -1,176 +1,145 @@
 "use client"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Heart, Gift, Zap, Star, ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, ShoppingCart, Banknote, Send } from "lucide-react"
 import Link from "next/link"
+import { HubspotContactForm } from "@/components/hubspot-contact-form"
+import Image from "next/image"
 
-const personalFeatures = [
+const howItWorksSteps = [
   {
-    icon: Heart,
-    title: "Philanthropic Giving",
-    description: "Support causes you're passionate about with employer matching and easy donation tracking.",
-    benefits: ["Choose from 500+ verified charities", "Employer matching up to $1,000", "Real-time impact tracking"],
+    icon: ShoppingCart,
+    title: "Shop & Earn Cashback",
+    description: "Get real cashback on your everyday spending at over 80 top Australian retailers and 100+ major restaurants.",
   },
   {
-    icon: Gift,
-    title: "Flexible Benefits",
-    description: "Choose from a wide range of health, wellness, and lifestyle benefits that fit your needs.",
-    benefits: ["Comprehensive health coverage", "Wellness programs", "Lifestyle spending accounts"],
+    icon: Banknote,
+    title: "Top-Up Your Account",
+    description: "Easily add funds to your shopping and savings account using PayID. A single $6 fee gives you full access.",
   },
   {
-    icon: Zap,
-    title: "Instant Access",
-    description: "Mobile-first platform with instant access to all your benefits and giving history.",
-    benefits: ["Mobile app available", "Real-time notifications", "Easy claims processing"],
+    icon: Send,
+    title: "Send Discounted Gift Cards",
+    description: "Surprise friends and family with the perfect gift. Buy and send gift cards for any occasion, all with an exclusive discount.",
   },
-  {
-    icon: Star,
-    title: "Personal Impact",
-    description: "See the real-world impact of your contributions and volunteer efforts in your community.",
-    benefits: ["Impact dashboard", "Community stories", "Volunteer hour tracking"],
-  },
-]
-
-const benefits = [
-  "Access to 500+ charitable organizations",
-  "Employer donation matching up to $1,000",
-  "Comprehensive health & wellness benefits",
-  "Financial planning and education resources",
-  "Volunteer time off tracking",
-  "Personal impact dashboard",
-  "24/7 customer support",
-  "Mobile app with offline access",
 ]
 
 export default function ForYouClientPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-20 lg:pb-32">
-        <div className="absolute inset-0 gradient-animate opacity-10"></div>
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-xl float"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-xl float-reverse"></div>
-        </div>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
         <div className="container px-4 md:px-6 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 px-4 py-2">
-              Personal Benefits Platform
+            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 px-4 py-2 rounded-full font-semibold">
+              One Member Benefits
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Benefits That Actually <span className="text-accent">Benefit You</span>
+              Unlock Exclusive Savings & <span className="text-accent">Reward Yourself</span>
             </h1>
 
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Access comprehensive benefits, support causes you care about, and take control of your financial wellness
-              through your employer's Onesto platform. Make a difference while securing your future.
+              For just $6 per month, get cashback from 80+ top Australian retailers. On average, our members save enough for a full tank of petrol every few months. Top up with PayID and start saving today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 glow-accent rounded-2xl px-8 py-6">
-                <Link href="/contact">
-                  Get Started
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow">
+                <Link href="#request-account">
+                  Request Your Account
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="glass-card rounded-2xl px-8 py-6">
-                <Link href="#features">Learn More</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 lg:py-32 bg-gray-50">
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 lg:py-24 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Everything You Need in One Platform
+              How It Works
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From health benefits to charitable giving, manage all your workplace benefits in one beautiful,
-              easy-to-use platform.
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Getting started with One Member Benefits is as easy as one, two, three.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {personalFeatures.map((feature, index) => (
-              <Card key={index} className="glass-card border-0 rounded-3xl hover-lift">
+          <div className="grid gap-8 md:grid-cols-3">
+            {howItWorksSteps.map((step, index) => (
+              <Card key={index} className="bg-white border-0 rounded-2xl shadow-sm hover:shadow-lg transition-shadow text-center p-6">
                 <CardHeader className="pb-4">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center">
-                      <feature.icon className="h-6 w-6 text-accent" />
+                  <div className="flex justify-center items-center mb-4">
+                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
+                      <step.icon className="h-8 w-8 text-accent" />
                     </div>
-                    <CardTitle className="text-xl font-semibold text-gray-900">{feature.title}</CardTitle>
                   </div>
-                  <CardDescription className="text-gray-600 leading-relaxed">{feature.description}</CardDescription>
+                  <CardTitle className="text-xl font-semibold text-gray-900">{step.title}</CardTitle>
+                  <p className="text-gray-600 leading-relaxed pt-2">{step.description}</p>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {feature.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits List Section */}
-      <section className="py-20 lg:py-32">
+      {/* Gifting Section */}
+      <section className="py-20 lg:py-24">
         <div className="container px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-3xl font-bold text-gray-900">What You Get With Onesto</h3>
+            <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-gray-900">The Perfect Gift, Every Time</h3>
                 <p className="text-lg text-gray-600">
-                  Access comprehensive benefits and make a difference through your workplace.
+                    Celebrate special moments with the gift of choice. Send a discounted gift card to friends and family for birthdays, holidays, or just because. They can shop at their favorite stores, and you save money.
                 </p>
-              </div>
-
-              <div className="grid gap-4">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={benefit}
-                    className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center bg-accent/10">
-                      <CheckCircle className="h-4 w-4 text-accent" />
-                    </div>
-                    <span className="text-gray-700 font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 glow-accent rounded-2xl">
-                <Link href="/contact">
-                  Explore Your Benefits
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-semibold">
+                    <Link href="#request-account">
+                        Send a Gift Card
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
             </div>
-
-            <div className="relative">
-              <div className="relative glass-card rounded-3xl p-8 backdrop-blur-xl">
-                <div className="aspect-video bg-gradient-to-br from-accent/10 to-accent/20 rounded-2xl flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center bg-accent/10">
-                      <Heart className="h-10 w-10 text-accent" />
-                    </div>
-                    <p className="text-gray-600 font-medium">Personal Benefits Portal</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative flex items-center justify-center">
+                <Image src="/member-shop.png" alt="Gift Card Dashboard" width={250} height={100} className="rounded-2xl shadow-2xl" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Retailers Section */}
+      <section className="py-20 lg:py-24 bg-gray-50">
+          <div className="container px-4 md:px-6">
+              <div className="text-center space-y-4 mb-12">
+                  <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                      Shop At All Your Favourite Stores
+                  </h2>
+                  <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                      We've partnered with over 80 of Australia's top retailers.
+                  </p>
+              </div>
+              <div className="max-w-4xl mx-auto">
+                <Image src="/ret-list.png" alt="Featured Retailers" width={1000} height={400} className="rounded-2xl" />
+              </div>
+          </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="request-account" className="py-20 lg:py-24 bg-accent text-white">
+        <div className="container px-4 md:px-6">
+          <div className="text-center space-y-4 mb-12 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Ready to Start Saving?
+            </h2>
+            <p className="text-lg text-accent-100">
+              Request your One Member Benefits account for just $6 per month. Fill out the form below, and we'll get you set up to start enjoying cashback and discounts immediately.
+            </p>
+          </div>
+          <div className="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-2xl">
+            <HubspotContactForm />
           </div>
         </div>
       </section>

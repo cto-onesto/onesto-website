@@ -30,7 +30,7 @@ export function XeroSection() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="https://onesto.co/en/knowledge/employer-services">
+                <Link href="/faqs">
                   Knowledge Base
                 </Link>
               </Button>

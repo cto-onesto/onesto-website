@@ -149,8 +149,8 @@ const ForCompaniesPage = () => {
                     </motion.div>
                     <motion.div variants={itemVariants} className="mt-8 md:mt-0">
                         <Image
-                            src="/appreciate.svg"
-                            alt="Happy employee"
+                            src="/rewardrecognition.png"
+                            alt="R&R Dashboard"
                             width={500}
                             height={500}
                             className="rounded-lg"
@@ -177,7 +177,7 @@ const ForCompaniesPage = () => {
                         <Image
                             src="/pers-zation.svg"
                             alt="Onesto app on a phone"
-                            width={500}
+                            width={300}
                             height={500}
                             className="rounded-lg"
                         />

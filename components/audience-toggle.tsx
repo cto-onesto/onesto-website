@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Building2, Users, TrendingUp, Heart, Shield, Gift, ArrowRight, CheckCircle, Star, Zap, Handshake } from "lucide-react"
+import { Building2, Users, TrendingUp, Heart, Shield, Gift, ArrowRight, CheckCircle, Star, Zap, Handshake, ShoppingCart, Banknote } from "lucide-react"
 
 type Audience = "companies" | "individuals" | "charities"
 
@@ -49,41 +49,41 @@ const companyContent = {
 }
 
 const individualContent = {
-  title: "Benefits That Actually Benefit You",
-  subtitle: "Personalized Employee Experience Platform",
+  title: "Unlock Exclusive Savings & Rewards",
+  subtitle: "One Member Benefits",
   description:
-    "Access comprehensive benefits, support causes you care about, and take control of your financial wellness through your employer's Onesto platform.",
+    "For just $6 per month, get cashback from 80+ top Australian retailers. On average, our members save enough for a full tank of petrol every few months. Top up with PayID and start saving today.",
   features: [
     {
-      icon: Heart,
-      title: "Philanthropic Giving",
-      description: "Support causes you're passionate about with employer matching and easy donation tracking.",
+      icon: ShoppingCart,
+      title: "Cashback on Shopping",
+      description: "Earn cashback at over 80+ top retailers and 100+ major restaurants across Australia.",
     },
     {
       icon: Gift,
-      title: "Flexible Benefits",
-      description: "Choose from a wide range of health, wellness, and lifestyle benefits that fit your needs.",
+      title: "Discounted Gift Cards",
+      description: "Send gift cards to friends and family for any occasion, all with an exclusive member discount.",
     },
     {
-      icon: Zap,
-      title: "Instant Access",
-      description: "Mobile-first platform with instant access to all your benefits and giving history.",
+      icon: Banknote,
+      title: "Easy Top-Ups",
+      description: "Conveniently top up your shopping and savings account anytime using PayID.",
     },
     {
       icon: Star,
-      title: "Personal Impact",
-      description: "See the real-world impact of your contributions and volunteer efforts in your community.",
+      title: "Real Savings",
+      description: "On average, members save enough for a full tank of petrol every few months.",
     },
   ],
   benefits: [
-    "Access to 500+ charitable organizations",
-    "Employer donation matching up to $1,000",
-    "Comprehensive health & wellness benefits",
-    "Financial planning and education resources",
-    "Volunteer time off tracking",
-    "Personal impact dashboard",
+    "Access to 80+ top retailers",
+    "Over 100 major restaurants",
+    "Send discounted gift cards",
+    "Simple $6 monthly membership",
+    "Easy account top-ups with PayID",
+    "Start saving immediately",
   ],
-  cta: "Explore Your Benefits",
+  cta: "Get Started Now",
 }
 
 const charityContent = {

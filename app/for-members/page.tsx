@@ -2,18 +2,19 @@ import type { Metadata } from "next"
 import ForYouClientPage from "./ForYouClientPage"
 
 export const metadata: Metadata = {
-  title: "For You - Personal Employee Benefits Platform | Onesto",
+  title: "One Member Benefits - Cashback, Savings & Gift Cards | Onesto",
   description:
-    "Access comprehensive employee benefits, support causes you care about, and take control of your wellness through your employer's Onesto platform.",
+    "Join One Member Benefits to get cashback from 80+ top Australian retailers. Top up with PayID, send discounted gift cards, and start saving today for just $6.",
   keywords: [
-    "employee benefits",
-    "personal benefits",
-    "charitable giving",
-    "employee wellness",
-    "workplace benefits",
-    "philanthropic giving",
-    "financial wellness",
-    "health benefits",
+    "cashback",
+    "savings",
+    "gift cards",
+    "discounts",
+    "retailers",
+    "shopping",
+    "rewards",
+    "PayID",
+    "B2C",
   ],
 }
 
