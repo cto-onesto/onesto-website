@@ -147,7 +147,7 @@ const ForCharitiesPage = () => {
                 alt="Our Mission - Impact Without Burden"
                 width={250}
                 height={100}
-                className="rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                className="rounded-xl transform hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           </div>

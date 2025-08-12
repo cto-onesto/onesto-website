@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-50 border-t">
       <div className="container px-4 py-12 md:px-6">
-        <div className="grid gap-8 lg:grid-cols-4">
+        <div className="grid gap-8 lg:grid-cols-5">
           <div className="space-y-4">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
               <Link href="/" className="flex items-center space-x-2">
@@ -92,6 +92,27 @@ export function Footer() {
               <li>
                 <Link href="/research" className="text-muted-foreground hover:text-foreground">
                   Research
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {/* Solutions Section */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold">Solutions</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/for-members" className="text-muted-foreground hover:text-foreground">
+                  For Members
+                </Link>
+              </li>
+              <li>
+                <Link href="/for-companies" className="text-muted-foreground hover:text-foreground">
+                  For Companies
+                </Link>
+              </li>
+              <li>
+                <Link href="/for-charities" className="text-muted-foreground hover:text-foreground">
+                  For Charities
                 </Link>
               </li>
             </ul>

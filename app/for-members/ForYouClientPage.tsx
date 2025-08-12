@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, ShoppingCart, Banknote, Send } from "lucide-react"
 import Link from "next/link"
-import { HubspotContactForm } from "@/components/hubspot-contact-form"
+import { SignupForm } from "@/components/signup-form"
 import Image from "next/image"
 
 const howItWorksSteps = [
@@ -16,7 +16,7 @@ const howItWorksSteps = [
   {
     icon: Banknote,
     title: "Top-Up Your Account",
-    description: "Easily add funds to your shopping and savings account using PayID. A single $6 fee gives you full access.",
+    description: "Easily add funds to your shopping and savings account using PayID. A single $5 fee gives you full access.",
   },
   {
     icon: Send,
@@ -42,13 +42,13 @@ export default function ForYouClientPage() {
             </h1>
 
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              For just $6 per month, get cashback from 80+ top Australian retailers. On average, our members save enough for a full tank of petrol every few months. Top up with PayID and start saving today.
+              For just $5 per month, get cashback from 80+ top Australian retailers. On average, our members save enough for a full tank of petrol every few months. Top up with PayID and start saving today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow">
-                <Link href="#request-account">
-                  Request Your Account
+                <Link href="#signup">
+                  Sign Up Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -97,14 +97,14 @@ export default function ForYouClientPage() {
                     Celebrate special moments with the gift of choice. Send a discounted gift card to friends and family for birthdays, holidays, or just because. They can shop at their favorite stores, and you save money.
                 </p>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-semibold">
-                    <Link href="#request-account">
+                    <Link href="#signup">
                         Send a Gift Card
                         <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                 </Button>
             </div>
             <div className="relative flex items-center justify-center">
-                <Image src="/member-shop.png" alt="Gift Card Dashboard" width={250} height={100} className="rounded-2xl shadow-2xl" />
+                <Image src="/member-shop.png" alt="Gift Card Dashboard" width={250} height={100} className="rounded-2xl" />
             </div>
           </div>
         </div>
@@ -128,18 +128,10 @@ export default function ForYouClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section id="request-account" className="py-20 lg:py-24 bg-accent text-white">
+      <section id="signup" className="py-20 lg:py-24 bg-accent text-white">
         <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Ready to Start Saving?
-            </h2>
-            <p className="text-lg text-accent-100">
-              Request your One Member Benefits account for just $6 per month. Fill out the form below, and we'll get you set up to start enjoying cashback and discounts immediately.
-            </p>
-          </div>
           <div className="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-2xl">
-            <HubspotContactForm />
+            <SignupForm />
           </div>
         </div>
       </section>
