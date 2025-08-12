@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import Link from "next/link"
@@ -11,7 +12,7 @@ interface SessionData {
   customer_email: string
 }
 
-export default function SuccessPage() {
+function SuccessPage() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get("session_id")
   const error = searchParams.get("error")
@@ -107,5 +108,19 @@ export default function SuccessPage() {
     <div className="flex justify-center items-center min-h-screen">
       <p>Invalid session or error.</p>
     </div>
+  )
+}
+
+export default function SuccessPageWithSuspense() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center items-center min-h-screen">
+          <div className="loader">Loading...</div>
+        </div>
+      }
+    >
+      <SuccessPage />
+    </Suspense>
   )
 }

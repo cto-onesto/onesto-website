@@ -7,9 +7,10 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi,
+  useCarousel,
 } from "@/components/ui/carousel"
 import Image from "next/image"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const testimonials = [
   {
@@ -60,6 +61,29 @@ const testimonials = [
 ]
 
 export function TestimonialsSection() {
+  const [api, setApi] = useState<CarouselApi>()
+  const [isHovered, setIsHovered] = useState(false)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    let scrollInterval: NodeJS.Timeout
+
+    const startScrolling = () => {
+      scrollInterval = setInterval(() => {
+        if (!isHovered) {
+          api.scrollNext()
+        }
+      }, 2000) // Scroll every 2 seconds
+    }
+
+    startScrolling()
+
+    return () => clearInterval(scrollInterval)
+  }, [api, isHovered])
+
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
       <div className="container px-4 md:px-6">
@@ -73,11 +97,14 @@ export function TestimonialsSection() {
         </div>
 
         <Carousel
+          setApi={setApi}
           className="w-full"
           opts={{
             align: "start",
             loop: true,
           }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (

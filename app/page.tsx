@@ -1,12 +1,15 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { EnhancedHeroSection } from "@/components/enhanced-hero-section"
 import { AudienceToggle } from "@/components/audience-toggle"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { XeroSection } from "@/components/xero-section"
 import { CTASection } from "@/components/cta-section"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+
+const ClientLogoCarousel = dynamic(() => import("@/components/client-logo-carousel").then(mod => mod.ClientLogoCarousel), { ssr: false });
+const TestimonialsSection = dynamic(() => import("@/components/testimonials-section").then(mod => mod.TestimonialsSection), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Employee Benefits & Philanthropic Benefits Platform | Onesto",
@@ -30,6 +33,46 @@ export const metadata: Metadata = {
     url: "https://onesto.co",
   },
 }
+
+const clientLogos = [
+  "aad.png",
+  "abs.png",
+  "allstarkids.png",
+  "arzo.png",
+  "autobarn.png",
+  "autopro.png",
+  "bapcor.png",
+  "baxtersmtq.png",
+  "burson.png",
+  "cgh.png",
+  "connections.png",
+  "emali.webp",
+  "fortress.png",
+  "gradi.jpg",
+  "hillstreet.jpg",
+  "jelliscraig.jpg",
+  "kidsoft.png",
+  "knotwood.png",
+  "lucas.png",
+  "marketplacefresh.png",
+  "midas.png",
+  "minimax.png",
+  "movieorld.png",
+  "ol.png",
+  "precision.png",
+  "rsyltc.png",
+  "stannards.png",
+  "strintauto.png",
+  "teds.png",
+  "theircare.png",
+  "topgolf.png",
+  "truckline.png",
+  "uniting.png",
+  "vcinemas.png",
+  "vrl.png",
+  "wano.png",
+  "wetnwild.png",
+]
 
 export default function HomePage() {
   return (
@@ -136,7 +179,7 @@ export default function HomePage() {
                 className="w-full h-full rounded-lg"
                 src="https://www.youtube.com/embed/i_CVfxme9iU?si=Xxc2RCPCnuaCYw8d"
                 title="Rewards & Recognition with Onesto"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
               ></iframe>
             </div>
@@ -157,6 +200,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ClientLogoCarousel logos={clientLogos} /> {/* Insert the carousel here */}
 
       <div className="py-24 space-y-24">
         <XeroSection />

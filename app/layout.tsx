@@ -2,8 +2,10 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { EnhancedHeader } from "@/components/enhanced-header"
-import { Footer } from "@/components/footer"
+import dynamic from "next/dynamic"
+
+const EnhancedHeader = dynamic(() => import("@/components/enhanced-header").then(mod => mod.EnhancedHeader), { ssr: false });
+const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] })
 
