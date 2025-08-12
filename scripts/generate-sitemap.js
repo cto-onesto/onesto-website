@@ -78,4 +78,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     .join('')}
 </urlset>`;
 
-fs.writeFileSync(path.resolve(__dirname, '../out/sitemap.xml'), sitemap);
+const outDir = path.resolve(__dirname, '../out');
+fs.mkdirSync(outDir, { recursive: true });
+fs.writeFileSync(path.resolve(outDir, 'sitemap.xml'), sitemap);
