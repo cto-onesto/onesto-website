@@ -3,7 +3,7 @@ import Stripe from 'stripe';
 import { sendEmail } from '@/lib/email';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: '2025-07-30.basil',
+    apiVersion: '2025-06-30.basil',
 });
 
 const relevantEvents = new Set([
@@ -118,6 +118,53 @@ export async function POST(req: NextRequest) {
             console.error('Error handling event:', error);
             return new NextResponse('Error handling event', { status: 500 });
         }
+    }
+
+    // Add to sender.net group (non-blocking, errors ignored)
+    try {
+        let firstName = '';
+        let lastName = '';
+        let email = '';
+
+        // Try to extract from the last processed event
+        if (event.type === 'checkout.session.completed') {
+            const session = event.data.object as Stripe.Checkout.Session;
+            const details = session.customer_details;
+            email = details?.email || '';
+            if (details?.name) {
+                const nameParts = details.name.split(' ');
+                firstName = nameParts[0] || '';
+                lastName = nameParts.slice(1).join(' ') || '';
+            }
+        } else if (event.type === 'charge.succeeded') {
+            const charge = event.data.object as Stripe.Charge;
+            const details = charge.billing_details;
+            email = details?.email || '';
+            if (details?.name) {
+                const nameParts = details.name.split(' ');
+                firstName = nameParts[0] || '';
+                lastName = nameParts.slice(1).join(' ') || '';
+            }
+        }
+
+        if (email) {
+            await fetch('https://api.sender.net/v2/subscribers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${process.env.SENDER_API_KEY}`,
+                },
+                body: JSON.stringify({
+                    email,
+                    first_name: firstName,
+                    last_name: lastName,
+                    groups: ['aO6r2p'],
+                }),
+            });
+        }
+    } catch (err) {
+        // Ignore errors, do not interrupt process
+        console.error('Failed to add to sender.net group:', err);
     }
 
     return new NextResponse('Success', { status: 200 });
