@@ -36,7 +36,7 @@ export function HeroSection() {
                 className="bg-accent hover:bg-accent/90 text-white border-accent"
               >
                 <a
-                  href="https://meetings.hubspot.com/doberoi"
+                  href="https://meetings-ap1.hubspot.com/benjamin-silluzio"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

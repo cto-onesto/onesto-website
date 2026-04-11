@@ -138,7 +138,7 @@ export function EnhancedHeader() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   {item === "See How It Works" ? (
                     <a
-                      href="https://meetings.hubspot.com/doberoi"
+                      href="https://meetings-ap1.hubspot.com/benjamin-silluzio"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none"
@@ -224,7 +224,7 @@ export function EnhancedHeader() {
                 { name: "Blog", href: "/blog" },
                 { name: "About Us", href: "/about" },
                 { name: "Integrations", href: "/integrations" },
-                { name: "See How It Works", href: "https://meetings.hubspot.com/doberoi", external: true },
+                { name: "See How It Works", href: "https://meetings-ap1.hubspot.com/benjamin-silluzio", external: true },
               ].map((item, index) => (
                 <motion.div
                   key={item.name}

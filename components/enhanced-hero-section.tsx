@@ -130,7 +130,7 @@ export function EnhancedHeroSection() {
                   className="glass-accent border-accent/30 text-accent hover:bg-accent/10 rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-sm"
                 >
                   <a
-                    href="https://meetings.hubspot.com/doberoi"
+                    href="https://meetings-ap1.hubspot.com/benjamin-silluzio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
