@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
@@ -17,6 +18,12 @@ import {
 export function EnhancedHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+
+  const navPill = isHome
+    ? "rounded-xl bg-white/5 border border-white/10 text-[#f4f6ff] hover:bg-white/10 hover:text-[#2ee6c3] focus:bg-white/10 focus:text-[#2ee6c3] focus:outline-none"
+    : "rounded-xl glass-card hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +35,7 @@ export function EnhancedHeader() {
 
   return (
     <motion.header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 bg-white ${isScrolled ? "glass-card backdrop-blur-xl border-b border-white/20 shadow-lg" : ""
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${isHome ? "bg-[#060913]/90 border-b border-white/10" : "bg-white"} ${isScrolled ? (isHome ? "backdrop-blur-xl shadow-lg" : "glass-card backdrop-blur-xl border-b border-white/20 shadow-lg") : ""
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -46,7 +53,7 @@ export function EnhancedHeader() {
               <img
                 src="/logo.png"
                 alt="Onesto"
-                className="h-8 w-auto rounded-full"
+                className={`h-8 w-auto rounded-full ${isHome ? "brightness-0 invert" : ""}`}
               />
             </motion.div>
           </Link>
@@ -56,7 +63,7 @@ export function EnhancedHeader() {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className="space-x-2">
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="rounded-xl glass-card hover:bg-primary/10 hover:text-primary">
+              <NavigationMenuTrigger className={navPill}>
                 Product
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -141,7 +148,7 @@ export function EnhancedHeader() {
                       href="https://meetings-ap1.hubspot.com/benjamin-silluzio"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none"
+                      className={`group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-all duration-200 ${navPill}`}
                     >
                       {item}
                     </a>
@@ -151,7 +158,7 @@ export function EnhancedHeader() {
                       legacyBehavior
                       passHref
                     >
-                      <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-xl glass-card px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none">
+                      <NavigationMenuLink className={`group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-all duration-200 ${navPill}`}>
                         {item}
                       </NavigationMenuLink>
                     </Link>
@@ -166,7 +173,7 @@ export function EnhancedHeader() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               asChild
-              className="hidden md:inline-flex bg-primary hover:bg-primary/90 glow-primary rounded-xl px-6 py-2 font-semibold"
+              className={`hidden md:inline-flex rounded-xl px-6 py-2 font-semibold ${isHome ? "bg-[#16ae97] hover:bg-[#2ee6c3] text-[#04140f]" : "bg-primary hover:bg-primary/90 glow-primary"}`}
             >
               <Link href="/contact">Contact</Link>
             </Button>
@@ -177,7 +184,7 @@ export function EnhancedHeader() {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden glass-card rounded-xl"
+              className={`lg:hidden rounded-xl ${isHome ? "bg-white/5 border border-white/10 text-white" : "glass-card"}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <AnimatePresence mode="wait">
@@ -212,7 +219,7 @@ export function EnhancedHeader() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="lg:hidden glass-card border-t border-white/20 backdrop-blur-xl"
+            className={`lg:hidden border-t backdrop-blur-xl ${isHome ? "bg-[#0b101f]/95 border-white/10" : "glass-card border-white/20"}`}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -237,7 +244,7 @@ export function EnhancedHeader() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block py-3 px-4 text-sm font-medium hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                      className={`block py-3 px-4 text-sm font-medium rounded-xl transition-all duration-200 ${isHome ? "text-[#dbe2f5] hover:text-[#2ee6c3] hover:bg-white/5" : "hover:text-primary hover:bg-primary/5"}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -245,7 +252,7 @@ export function EnhancedHeader() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block py-3 px-4 text-sm font-medium hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                      className={`block py-3 px-4 text-sm font-medium rounded-xl transition-all duration-200 ${isHome ? "text-[#dbe2f5] hover:text-[#2ee6c3] hover:bg-white/5" : "hover:text-primary hover:bg-primary/5"}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}

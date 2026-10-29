@@ -172,21 +172,21 @@ export function AudienceToggle() {
 
                             <button
                                 onClick={() => handleAudienceChange("companies")}
-                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "companies" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
+                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "companies" ? "font-bold text-[#a78bfa]" : "font-medium text-[#a7b1cc] hover:text-[#a78bfa]"
                                     }`}
                             >
                                 For Companies
                             </button>
                             <button
                                 onClick={() => handleAudienceChange("individuals")}
-                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "individuals" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
+                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "individuals" ? "font-bold text-[#a78bfa]" : "font-medium text-[#a7b1cc] hover:text-[#a78bfa]"
                                     }`}
                             >
                                 For You
                             </button>
                             <button
                                 onClick={() => handleAudienceChange("charities")}
-                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "charities" ? "font-bold text-primary" : "font-medium text-gray-600 hover:text-primary"
+                                className={`relative z-10 px-8 py-3 rounded-full transition-colors duration-200 ${activeAudience === "charities" ? "font-bold text-[#a78bfa]" : "font-medium text-[#a7b1cc] hover:text-[#a78bfa]"
                                     }`}
                             >
                                 For Charities
@@ -221,7 +221,7 @@ export function AudienceToggle() {
                             </motion.div>
 
                             <motion.h2
-                                className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl"
+                                className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -230,7 +230,7 @@ export function AudienceToggle() {
                             </motion.h2>
 
                             <motion.p
-                                className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                                className="text-lg text-[#a7b1cc] max-w-3xl mx-auto leading-relaxed"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -269,10 +269,10 @@ export function AudienceToggle() {
                                                         }`}
                                                 />
                                             </motion.div>
-                                            <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors duration-300">
+                                            <h3 className="text-xl font-semibold text-white group-hover:text-primary transition-colors duration-300">
                                                 {feature.title}
                                             </h3>
-                                            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                                            <p className="text-[#c3cbdf] leading-relaxed">{feature.description}</p>
                                         </CardContent>
                                     </Card>
                                 </motion.div>
@@ -288,14 +288,14 @@ export function AudienceToggle() {
                         >
                             <div className="space-y-8">
                                 <div className="space-y-4">
-                                    <h3 className="text-3xl font-bold text-gray-900">
+                                    <h3 className="text-3xl font-bold text-white">
                                         {activeAudience === "companies"
                                             ? "Why Companies Choose Onesto"
                                             : activeAudience === "individuals"
                                                 ? "What You Get With Onesto"
                                                 : "Partner with Onesto"}
                                     </h3>
-                                    <p className="text-lg text-gray-600">
+                                    <p className="text-lg text-[#a7b1cc]">
                                         {activeAudience === "companies"
                                             ? "Join hundreds of companies that trust Onesto to transform their employee experience."
                                             : activeAudience === "individuals"
@@ -308,7 +308,7 @@ export function AudienceToggle() {
                                     {content.benefits.map((benefit, index) => (
                                         <motion.div
                                             key={benefit}
-                                            className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                                            className="flex items-center space-x-3 p-3 rounded-xl hover:bg-white/5 transition-colors duration-200"
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
@@ -330,7 +330,7 @@ export function AudienceToggle() {
                                                         }`}
                                                 />
                                             </div>
-                                            <span className="text-gray-700 font-medium">{benefit}</span>
+                                            <span className="text-[#dbe2f5] font-medium">{benefit}</span>
                                         </motion.div>
                                     ))}
                                 </div>
