@@ -4,7 +4,6 @@
   <h1>Onesto Website</h1>
   <p>The official website for Onesto, built with Next.js and Tailwind CSS.</p>
 </div>
-
 <hr>
 
 <h2>🚀 Tech Stack</h2>
